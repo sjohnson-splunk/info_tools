@@ -1,0 +1,193 @@
+2022-02-17 16:22:55,580, Level=ERROR, Pid=28627, Logger=splunklib, File=search_command.py, Line=1003, NameError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 17 : name 'confname' is not defined
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 17, in generate
+    btool = subprocess.run([splunkcmd, "btool", confname, "list", "--debug"], stdout=PIPE).stdout.decode("utf-8").splitlines()
+
+2022-02-17 18:06:39,895, Level=ERROR, Pid=3475, Logger=splunklib, File=search_command.py, Line=1003, AttributeError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20 : 'NoneType' object has no attribute 'group'
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20, in generate
+    confpath=m.group(1)
+
+2022-02-17 18:19:40,393, Level=ERROR, Pid=4439, Logger=splunklib, File=search_command.py, Line=1003, AttributeError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20 : 'NoneType' object has no attribute 'group'
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20, in generate
+    confpath=m.group(1)
+
+2022-02-17 18:30:02,419, Level=ERROR, Pid=5132, Logger=splunklib, File=search_command.py, Line=1003, error at "/opt/splunk/lib/python3.7/sre_parse.py", line 648 : multiple repeat at position 25
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 19, in generate
+    m=re.search(r"(\S+)\s+(\S+)(?:\s*=\s*)?*(.+)?*",s)
+  File "/opt/splunk/lib/python3.7/re.py", line 185, in search
+    return _compile(pattern, flags).search(string)
+  File "/opt/splunk/lib/python3.7/re.py", line 288, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "/opt/splunk/lib/python3.7/sre_compile.py", line 764, in compile
+    p = sre_parse.parse(p, flags)
+  File "/opt/splunk/lib/python3.7/sre_parse.py", line 924, in parse
+    p = _parse_sub(source, pattern, flags & SRE_FLAG_VERBOSE, 0)
+  File "/opt/splunk/lib/python3.7/sre_parse.py", line 420, in _parse_sub
+    not nested and not items))
+  File "/opt/splunk/lib/python3.7/sre_parse.py", line 648, in _parse
+    source.tell() - here + len(this))
+
+2022-02-17 18:33:26,387, Level=ERROR, Pid=5400, Logger=splunklib, File=search_command.py, Line=1003, error at "/opt/splunk/lib/python3.7/sre_parse.py", line 648 : multiple repeat at position 18
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 19, in generate
+    m=re.search(r"(\S+)\s+(\S+)(.+)?*",s)
+  File "/opt/splunk/lib/python3.7/re.py", line 185, in search
+    return _compile(pattern, flags).search(string)
+  File "/opt/splunk/lib/python3.7/re.py", line 288, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "/opt/splunk/lib/python3.7/sre_compile.py", line 764, in compile
+    p = sre_parse.parse(p, flags)
+  File "/opt/splunk/lib/python3.7/sre_parse.py", line 924, in parse
+    p = _parse_sub(source, pattern, flags & SRE_FLAG_VERBOSE, 0)
+  File "/opt/splunk/lib/python3.7/sre_parse.py", line 420, in _parse_sub
+    not nested and not items))
+  File "/opt/splunk/lib/python3.7/sre_parse.py", line 648, in _parse
+    source.tell() - here + len(this))
+
+2022-02-18 08:14:39,635, Level=ERROR, Pid=24702, Logger=splunklib, File=search_command.py, Line=1003, AttributeError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20 : 'NoneType' object has no attribute 'group'
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20, in generate
+    confpath=m.group(1)
+
+2022-02-18 08:15:39,386, Level=ERROR, Pid=24960, Logger=splunklib, File=search_command.py, Line=1003, AttributeError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20 : 'NoneType' object has no attribute 'group'
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20, in generate
+    confpath=m.group(1)
+
+2022-02-18 11:58:04,147, Level=ERROR, Pid=7976, Logger=splunklib, File=search_command.py, Line=1003, UnboundLocalError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20 : local variable 'confpath' referenced before assignment
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 20, in generate
+    if splunkhome in confpath:
+
+2022-02-18 13:12:09,424, Level=ERROR, Pid=12880, Logger=splunklib, File=search_command.py, Line=1003, UnboundLocalError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 21 : local variable 'value' referenced before assignment
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 21, in generate
+    if value:
+
+2022-02-22 11:24:45,405, Level=ERROR, Pid=32313, Logger=splunklib, File=search_command.py, Line=1003, TypeError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 29 : 'NoneType' object is not subscriptable
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 29, in generate
+    if prop[0]=="[":
+
+2022-02-22 11:25:51,061, Level=ERROR, Pid=32448, Logger=splunklib, File=search_command.py, Line=1003, TypeError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 29 : 'NoneType' object is not subscriptable
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 29, in generate
+    if prop[0]=="[":
+
+2022-02-22 11:27:36,304, Level=ERROR, Pid=32622, Logger=splunklib, File=search_command.py, Line=1003, TypeError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 29 : 'NoneType' object is not subscriptable
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 29, in generate
+    if prop[0]=="[":
+
+2022-02-22 11:29:36,748, Level=ERROR, Pid=354, Logger=splunklib, File=search_command.py, Line=1003, TypeError at "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 29 : 'NoneType' object is not subscriptable
+Traceback:
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 795, in _process_protocol_v2
+    self._execute(ifile, None)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 208, in _execute
+    self._execute_v2(ifile, self.generate())
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/search_command.py", line 976, in _execute_v2
+    self._execute_chunk_v2(process, result)
+  File "/opt/splunk/etc/apps/info_tools/bin/splunklib/searchcommands/generating_command.py", line 217, in _execute_chunk_v2
+    for row in process:
+  File "/opt/splunk/etc/apps/info_tools/bin/btoolinfo.py", line 29, in generate
+    if prop[0]=="[":
+
