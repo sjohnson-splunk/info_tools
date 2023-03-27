@@ -2,15 +2,29 @@ INFOTOOLS
 
 What is/are infotools you ask???
 
-This app is a collection of custom commands that let you see file system info about some important file system objects in Splunk.
+This app is a collection of custom commands that let you see information from the search head that may normally require access to a command shell or file system.
 
-In version 1.0 there are 3 custom commands:
+In version 1.0 there are 10 custom commands:
 
 | lookupinfo
 
 | bundleinfo
 
 | userinfo
+
+| btoolinfo 
+
+| artifactinfo
+
+| pinginfo 
+
+| sslinfo 
+
+| varinfo
+
+| cliinfo
+
+| specinfo
 
 Each of these commands is a generating command (must be first command in the pipeline) and return results about the file objects.
 
@@ -62,7 +76,7 @@ Version 1.0.0
 
 usage:
 
-| lookupinfo
+| bundleinfo
 
 bundleinfo is a custom search command that will return information about all the files contained in the most current search bundle (.bundle) on the search head where it is run
 bundleinfo is a generating command and must be the first command in the pipeline
@@ -106,15 +120,128 @@ Version 1.0.0
 
 usage:
 
-| btoolinfo confname=".conf file name"
+| btoolinfo confname="conf file name"
+
+example:
+
+| btoolinfo confname="props"
 
 btoolinfo will run a btool command with the --debug option for conf files on the search head where it is run
 btoolinfo is a generating command and must be the first command in the pipeline
 btoolinfo has an arguement confname= that should be the name of a valid .conf file - invalid names will return no results
-userinfo requires python3 to run
-userinfo returns the following results:
+btoolinfo requires python3 to run
+btoolinfo returns the following results:
 
 confpath - the full path the .conf file for the property
 stanza - the name of the stanza with square brackets included
 property - the name of the property
 value - the value of the property
+
+
+artifactinfo
+==========
+For support, please email sjohnson@splunk.com
+
+| artifactinfo <sid, search, regex>=<option_value>
+
+example:
+
+| artifactinfo sid=1679956099.1578
+| artifactinfo search="really bad error"
+| artifactinfo regex="\w+Searches"
+
+artifactinfo is a custom search command that will return the contents of an info.csv file from a search artifact on the search head where it is run
+artifactinfo is a generating command and must be the first command in the pipeline
+artifactinfo requires 1 of 3 arguments: sid, search, regex
+sid = search id of the artifact
+search = a search string (case sensitive) to find in the info.csv file of any artifact
+regex = a regex expression to use to search the info.csv file of any search artifact
+
+artifactinfo requires python3 to run
+artifactinfo returns the contents of the search artifact info.csv file
+
+
+
+pinginfo
+==========
+For support, please email sjohnson@splunk.com
+
+| pinginfo address="ip address or name" (count=n)
+
+example:
+
+| pinginfo address="google.com" count=5
+
+pinginfo is a custom search command that will run the OS ping command to the ip address or hostname specified
+pinginfo is a generating command and must be the first command in the pipeline
+ping info requires a host or ip address and optionally a count (max count is 10, default count is 3)
+pinginfo requires python3 to run
+
+pinginfo returns a field: pingdata that is the output of the OS ping command that was run
+
+sslinfo
+==========
+For support, please email sjohnson@splunk.com
+
+| sslinfo hostport="host:port" (timeout=n)
+
+example:
+
+| sslinfo hostport=google.com:443" timeout=10
+
+sslinfo is a custom search command that will run the openssl sclient command to return info about ssl certificate found at the address and port specified
+sslinfo is a generating command and must be the first command in the pipeline
+sslinfo requires a host or ip address and port be specified and optionally a timeout value in seconds for the command (default 5) maximum of 30
+sslinfo requires python3 to run
+
+sslinfo will return a field: data that is the output of the openssl s_client -connect command
+
+varinfo
+==========
+For support, please email sjohnson@splunk.com
+
+
+| varinfo (<subdir>=<subdirectory under $SPLUNK_HOME/var>)
+
+example:
+
+| varinfo subdir="run/splunk/csv"
+
+varinfo is a custom search command that will generates a list of files under $SPLUNK_HOME/var
+varinfo is a generating command and must be the first command in the pipeline
+varinfo has an optional argument: subdir that can be any valid subdirectory under $SPLUNK_HOME/var - if not specified all files are listed (may be a lot of files)
+varinfo will return the following fields: file (including full path), size (bytes), mtime (epoch format)
+
+Note: upward recursion is not allowed
+
+cliinfo
+==========
+For support, please email sjohnson@splunk.com
+
+| cliinfo clicmd=<status, list, show, display, help command and options>
+
+example:
+
+| cliinfo clicmd="show kvstore-status"
+
+cliinfo is a custom search command that will generate the output of certain display only splunk cli commands if you have the proper capability (list_settings) or role to run them (admin, sc_admin)
+cliinfo is a generating command and must be the first command in the pipeline
+cliinfo returns a field: cmdout that is the stdout from the command that was run
+
+Note: if you try to run a command not listed you will get the message "not allowed" in the cmdout field
+
+specinfo
+==========
+For support, please email sjohnson@splunk.com
+
+| specinfo spec=<spec file name>
+
+example:
+
+| specinfo spec=server
+
+specinfo is a custom search command that will display the contents of a spec file from $SPLUNK_HOME/etc/system/README
+specinfo is a generating command and must be the first command in the pipeline
+specinfo returns a field: contents that is a complete listing of the .spec file requested
+
+Note:  a bad spec file name will return: .spec file not found
