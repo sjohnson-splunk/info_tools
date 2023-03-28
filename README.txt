@@ -6,25 +6,25 @@ This app is a collection of custom commands that let you see information from th
 
 In version 1.0 there are 10 custom commands:
 
-| lookupinfo
+| lookupinfo - see the location size and modtime of lookups
 
-| bundleinfo
+| bundleinfo - see what inside the latest search bundle
 
-| userinfo
+| userinfo - lists all files in the etc/users directory with size and modtime
 
-| btoolinfo 
+| btoolinfo - yet another btool output
 
-| artifactinfo
+| artifactinfo - view or search the info.csv file in search artifacts
 
-| pinginfo 
+| pinginfo - run a ping from your search head to measure latency or availability
 
-| sslinfo 
+| sslinfo - run the openssl s_client to view certificate details
 
-| varinfo
+| varinfo - see the size and modtimes of files in the splunk/var directory
 
-| cliinfo
+| cliinfo - run the splunk cli commands: status, list, show, display, help 
 
-| specinfo
+| specinfo - view the details of the .conf.spec files
 
 Each of these commands is a generating command (must be first command in the pipeline) and return results about the file objects.
 
